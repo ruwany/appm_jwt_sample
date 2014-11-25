@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.carbon.appmgt.samples.jwt</groupId>
+    <artifactId>appm.jwt.sample</artifactId>
+    <version>1.0</version>
+    <build>
+        <plugins>
+        <plugin>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>maven-bundle-plugin</artifactId>
+            <extensions>true</extensions>
+            <configuration>
+                <instructions>
+                    <Export-Package>
+                        org.wso2.carbon.appmgt.sample.jwt.*;
+                    </Export-Package>
+                    <Import-Package>
+                        com.google.code.gson.*,
+                        com.googlecode.jsontoken.*,
+                        *;resolution:=optional
+                    </Import-Package>
+                    <Embed-Dependency>scribe;scope=compile|runtime;inline=false;</Embed-Dependency>
+                </instructions>
+            </configuration>
+        </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.jsontoken</groupId>
+            <artifactId>jsontoken</artifactId>
+            <version>1.1</version>
+        </dependency>
+    </dependencies>
+</project>
